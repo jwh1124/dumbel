@@ -185,7 +185,7 @@ var action1 = 0.00, action2 = 0.00, action3 = 0.00, action4 = 0.00, action5 =0.0
 async function countable() { //운동 동작마다 필요한 class 수가 달라서 아마 카운트, 동작제어 등 다 따로 짜야될 듯..?
   predict();
   if(action1 > 0.9){
-    if(status == "squat"){
+    if(status == "dumbel"){
       count++;
       score = "excellent";
       if (diff == 0.7 && count < maxcount){
@@ -200,10 +200,10 @@ async function countable() { //운동 동작마다 필요한 class 수가 달라
     status = "stand";
   }
   else if(action2 > diff){
-    status = "squat";
+    status = "dumbel";
   }
   else if(action3 > 0.7){
-    if(status == "stand" || status == "squat"){
+    if(status == "stand" || status == "dumbel"){
       score = "bad";
       if (diff == 0.7 && count < maxcount){
         window.Android.PlayEBAudio();
